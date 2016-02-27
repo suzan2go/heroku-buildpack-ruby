@@ -99,6 +99,7 @@ WARNING
         install_bundler_in_app
         build_bundler
         post_bundler
+        build_nodejs
         create_database_yml
         install_binaries
         run_assets_precompile_rake_task
@@ -109,6 +110,10 @@ WARNING
   end
 
 private
+
+  def build_nodejs
+    pipe("npm install")
+  end
 
   # the base PATH environment variable to be used
   # @return [String] the resulting PATH
